@@ -1,0 +1,22 @@
+#include <stdio.h>
+int main() {
+    char ch;
+    int space = 0, newline = 0;
+    printf("Enter text (Press Ctrl+Z and Enter to stop):\n");
+    while ((ch = getchar()) != EOF) {
+        if (ch == ' ' || ch == '\t')
+            space++;
+        else if (ch == '\n')
+            newline++;
+    }
+    printf("Whitespaces: %d\n", space);
+    printf("Newlines: %d\n", newline);
+    return 0;
+}
+
+Input:
+Hello World
+Welcome to C
+Output:
+Whitespaces: 3
+Newlines: 2
