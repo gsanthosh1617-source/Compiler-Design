@@ -1,0 +1,22 @@
+//SANTHOSH G 192521035
+//find FIRST( ) - predictive parser for the given grammar
+#include <stdio.h>
+int main() {
+    printf("Grammar:\n");
+    printf("S -> AaAb | BbBa\n");
+    printf("A -> epsilon\n");
+    printf("B -> epsilon\n\n");
+    printf("FIRST(A) = { epsilon }\n");
+    printf("FIRST(B) = { epsilon }\n");
+    printf("FIRST(S) = { a, b }\n");
+    return 0;
+}
+Output:
+Grammar:
+S -> AaAb | BbBa
+A -> epsilon
+B -> epsilon
+
+FIRST(A) = { epsilon }
+FIRST(B) = { epsilon }
+FIRST(S) = { a, b }
