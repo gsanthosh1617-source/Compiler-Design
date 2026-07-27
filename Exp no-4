@@ -1,3 +1,5 @@
+//SANTHOSH G  192521035
+//recognize the operators +,-,*,/ usingregular Arithmetic operators.
 #include <stdio.h>
 int main() {
     char op;
