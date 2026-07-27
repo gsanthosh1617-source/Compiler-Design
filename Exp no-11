@@ -1,0 +1,45 @@
+//SANTHOSH G 192521035
+//perform symbol table operations.
+#include <stdio.h>
+#include <string.h>
+struct Symbol {
+    char name[20];
+    char type[20];
+};
+int main() {
+    struct Symbol table[10] = {
+        {"a", "int"},
+        {"b", "float"},
+        {"sum", "int"}
+    };
+    char search[20];
+    int i, found = 0;
+    printf("Symbol Table:\n");
+    printf("Name\tType\n");
+    for (i = 0; i < 3; i++)
+        printf("%s\t%s\n", table[i].name, table[i].type);
+    printf("\nEnter symbol to search: ");
+    scanf("%s", search);
+    for (i = 0; i < 3; i++) {
+        if (strcmp(table[i].name, search) == 0) {
+            printf("Symbol Found: %s\t%s\n",
+                   table[i].name, table[i].type);
+            found = 1;
+            break;
+        }
+    }
+    if (!found)
+        printf("Symbol Not Found\n");
+    return 0;
+}
+Input:
+Enter symbol to search: sum
+Output:
+Symbol Table:
+Name    Type
+a       int
+b       float
+sum     int
+
+Enter symbol to search: sum
+Symbol Found: sum    int
