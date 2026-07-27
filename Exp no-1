@@ -1,3 +1,5 @@
+//SANTHOSH G 192521035
+//to identify identifiers, constants, and operators using the C program.
 #include <stdio.h>
 #include <ctype.h>
 int main() {
