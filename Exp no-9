@@ -1,0 +1,22 @@
+//SANTHOSH G 192521035
+//eliminate left recursion from a given CFG.
+#include <stdio.h>
+int main() {
+    printf("Original Grammar:\n");
+    printf("S -> (L) | a\n");
+    printf("L -> L,S | S\n\n");
+    printf("Grammar after eliminating left recursion:\n");
+    printf("S  -> (L) | a\n");
+    printf("L  -> S L'\n");
+    printf("L' -> , S L' | epsilon\n");
+    return 0;
+}
+Output:
+Original Grammar:
+S -> (L) | a
+L -> L,S | S
+
+Grammar after eliminating left recursion:
+S  -> (L) | a
+L  -> S L'
+L' -> , S L' | epsilon
