@@ -1,3 +1,5 @@
+//SANTHOSH G 192521035
+//should ignore the redundant spaces,tabs, and new lines and ignore comments.
 #include <stdio.h>
 int main() {
     char s[500];
