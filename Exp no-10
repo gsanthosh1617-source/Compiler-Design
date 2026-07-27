@@ -1,0 +1,22 @@
+//SANTHOSH G 192521035
+//eliminate left factoring from a given CFG.
+#include <stdio.h>
+int main() {
+    printf("Original Grammar:\n");
+    printf("S -> iEtS | iEtSeS | a\n");
+    printf("E -> b\n\n");
+    printf("Grammar after eliminating left factoring:\n");
+    printf("S  -> iEtS S' | a\n");
+    printf("S' -> eS | epsilon\n");
+    printf("E  -> b\n");
+    return 0;
+}
+Output:
+Original Grammar:
+S -> iEtS | iEtSeS | a
+E -> b
+
+Grammar after eliminating left factoring:
+S  -> iEtS S' | a
+S' -> eS | epsilon
+E  -> b
