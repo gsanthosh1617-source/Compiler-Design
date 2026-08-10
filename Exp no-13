@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <string.h>
+int main() {
+    char s[50], st[50];
+    int i, top = -1;
+    printf("Enter string: ");
+    scanf("%s", s);
+    for(i = 0; s[i]; i++) {
+        st[++top] = s[i];
+        if(top >= 1 && st[top-1]=='i' && st[top]=='d')
+            top--, st[top]='E';
+        if(top >= 2 && st[top-2]=='E' && st[top-1]=='+' && st[top]=='E')
+            top -= 2, st[top]='E';
+        if(top >= 2 && st[top-2]=='E' && st[top-1]=='*' && st[top]=='E')
+            top -= 2, st[top]='E';
+    }
+    printf(top == 0 && st[0]=='E' ? "Accepted" : "Rejected");
+}
+Input:
+id+id
+Output:
+Accepted
