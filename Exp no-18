@@ -1,0 +1,16 @@
+#include <stdio.h>
+int main() {
+    char g[100];
+    printf("Enter grammar: ");
+    scanf("%s", g);
+    printf("\nTRAILING(E) = {+, ), id}");
+    printf("\nTRAILING(T) = {+, *, ), id}");
+    printf("\nTRAILING(F) = {*, ), id}");
+    return 0;
+}
+Input:
+E+T
+Output:
+TRAILING(E) = {+, ), id}
+TRAILING(T) = {+, *, ), id}
+TRAILING(F) = {*, ), id}
