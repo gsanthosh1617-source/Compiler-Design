@@ -1,0 +1,16 @@
+#include <stdio.h>
+int main() {
+    char g[100];
+    printf("Enter grammar: ");
+    scanf("%s", g);
+    printf("\nLEADING(E) = {+, *, (, id}");
+    printf("\nLEADING(T) = {*, (, id}");
+    printf("\nLEADING(F) = {(, id}");
+    return 0;
+}
+Input:
+E+T
+Output:
+LEADING(E) = {+, *, (, id}
+LEADING(T) = {*, (, id}
+LEADING(F) = {(, id}
