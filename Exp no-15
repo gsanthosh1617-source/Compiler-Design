@@ -1,3 +1,6 @@
+//SANTHOSH G-192521035
+//Scan and Count the number of
+characters, words, and lines in a file
 #include <stdio.h>
 int main() {
     FILE *fp;
