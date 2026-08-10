@@ -1,3 +1,5 @@
+//SANTHOSH G-192521035
+//TRAILING( ) – operator precedence parser
 #include <stdio.h>
 int main() {
     char g[100];
