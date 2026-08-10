@@ -1,3 +1,5 @@
+//SANTHOSH G-192521035
+//Three address code representation
 #include <stdio.h>
 #include <ctype.h>
 int main() {
