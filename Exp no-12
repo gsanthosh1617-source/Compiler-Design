@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <string.h>
+char s[100];
+int i = 0;
+void E(); void T(); void F();
+void E() {
+    T();
+    if (s[i] == '+') {
+        i++;
+        E();
+    }
+}
+void T() {
+    F();
+    if (s[i] == '*') {
+        i++;
+        T();
+    }
+}
+void F() {
+    if (s[i] == 'i' && s[i+1] == 'd')
+        i += 2;
+    else if (s[i] == '(') {
+        i++;
+        E();
+        if (s[i] == ')') i++;
+    }
+}
+int main() {
+    printf("Enter expression: ");
+    scanf("%s", s);
+    E();
+    if (i == strlen(s))
+        printf("Accepted");
+    else
+        printf("Rejected");
+    return 0;
+}
+Input:
+id+id*id
+Output:
+Accepted
