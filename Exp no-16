@@ -1,0 +1,21 @@
+#include <stdio.h>
+int main() {
+    char op, a, b, r;
+    printf("Enter TAC (example: t1=a+b): ");
+    scanf(" %c=%c%c%c", &r, &a, &op, &b);
+    printf("\nAssembly Code:\n");
+    printf("MOV R0, %c\n", a);
+    if(op == '+') printf("ADD R0, %c\n", b);
+    if(op == '-') printf("SUB R0, %c\n", b);
+    if(op == '*') printf("MUL R0, %c\n", b);
+    if(op == '/') printf("DIV R0, %c\n", b);
+    printf("MOV %c, R0\n", r);
+    return 0;
+}
+Input:
+t1=a+b
+Output:
+Assembly Code:
+MOV R0, a
+ADD R0, b
+MOV t1, R0
