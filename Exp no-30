@@ -1,0 +1,22 @@
+//SANTHOSH G-192521035
+//LEX Program to Count Consonants 
+%{
+#include <stdio.h>
+int consonants = 0;
+%}
+%%
+[b-df-hj-np-tv-zB-DF-HJ-NP-TV-Z] { consonants++; }
+.|\n                            ;
+%%
+int yywrap() { return 1; }
+int main() {
+    yylex();
+    printf("Total Consonants = %d\n", consonants);
+    return 0;
+}
+
+Input:
+Compiler Design
+
+Output:
+Total Consonants = 9
