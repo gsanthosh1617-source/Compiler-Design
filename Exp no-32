@@ -1,0 +1,24 @@
+//SANTHOSH G-192521035
+//LEX Program to Count Positive and Negative Numbers 
+%{
+#include <stdio.h>
+int pos = 0, neg = 0;
+%}
+%%
+\+[0-9]+|[0-9]+ { pos++; }
+-[0-9]+         { neg++; }
+.|\n            ;
+%%
+int yywrap() { return 1; }
+int main() {
+    yylex();
+    printf("Positive numbers: %d\nNegative numbers: %d\n", pos, neg);
+    return 0;
+}
+
+Input:
+12 -5 40 -30 +15
+
+Output:
+Positive numbers: 3
+Negative numbers: 2
