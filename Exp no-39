@@ -1,0 +1,20 @@
+//SANTHOSH G-192521035
+//LEX Code to Replace a Word with Another Word 
+%{
+#include <stdio.h>
+%}
+%%
+"old" { printf("new"); }
+.|\n  { printf("%s", yytext); }
+%%
+int yywrap() { return 1; }
+int main() {
+    yylex();
+    return 0;
+}
+
+Input:
+This is old string.
+
+Output:
+This is new string.
