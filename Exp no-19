@@ -1,0 +1,40 @@
+//SANTHOSH G-192521035
+//LEX – Count Characters, Lines and Words
+#include <stdio.h>
+int characters = 0;
+int words = 0;
+int lines = 0;
+%}
+%%
+\n              { lines++; characters++; }
+[ \t]+          { characters += yyleng; }
+[a-zA-Z0-9_]+   { words++; characters += yyleng; }
+.               { characters++; }
+%%
+int main()
+{
+    yylex();
+    printf("Characters = %d\n", characters);
+    printf("Words = %d\n", words);
+    printf("Lines = %d\n", lines);
+    return 0;
+}
+int yywrap()
+{
+    return 1;
+}
+
+input: sample.c
+#include <stdio.h>
+int main()
+{
+    int a = 10;
+    printf("Hello");
+    return 0;
+}
+
+Output:
+Characters = 85
+Words = 12
+Lines = 7
+
