@@ -1,0 +1,20 @@
+//SANTHOSH G-192521035
+//LEX Program to Check Valid Email Address 
+%{
+#include <stdio.h>
+%}
+%%
+[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,} { printf("Valid Email Address\n"); }
+.|\n                                          { printf("Invalid Email Address\n"); }
+%%
+int yywrap() { return 1; }
+int main() {
+    yylex();
+    return 0;
+}
+
+Input:
+student@saveetha.ac.in
+
+Output:
+Valid Email Address
