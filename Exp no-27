@@ -1,0 +1,20 @@
+//SANTHOSH G-192521035
+//LEX Program to Convert Substring 'abc' to 'ABC' 
+%{
+#include <stdio.h>
+%}
+%%
+"abc" { printf("ABC"); }
+.|\n  { printf("%s", yytext); }
+%%
+int yywrap() { return 1; }
+int main() {
+    yylex();
+    return 0;
+}
+
+Input:
+abc hello abc world
+
+Output:
+ABC hello ABC world
