@@ -1,0 +1,34 @@
+//SANTHOSH G-192521035
+//LEX Program to Print HTML Tags
+#include <stdio.h>
+%}
+%%
+<[^>]+>    { printf("HTML Tag: %s\n", yytext); }
+.|\n       ;
+%%
+int main()
+{
+    yylex();
+    return 0;
+}
+int yywrap()
+{
+    return 1;
+}
+Sample Input — sample.html
+<html>
+<body>
+<h1>My First Heading</h1>
+<p>My first paragraph.</p>
+</body>
+</html>
+
+Output:
+HTML Tag: <html>
+HTML Tag: <body>
+HTML Tag: <h1>
+HTML Tag: </h1>
+HTML Tag: <p>
+HTML Tag: </p>
+HTML Tag: </body>
+HTML Tag: </html>
