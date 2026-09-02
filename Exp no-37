@@ -1,0 +1,24 @@
+//SANTHOSH G-192521035
+//LEX Program to Count Frequency of Given Word 
+%{
+#include <stdio.h>
+#include <string.h>
+int count = 0;
+char target[] = "Saveetha";
+%}
+%%
+[a-zA-Z]+ { if(strcmp(yytext, target) == 0) count++; }
+.|\n      ;
+%%
+int yywrap() { return 1; }
+int main() {
+    yylex();
+    printf("Frequency of 'Saveetha' = %d\n", count);
+    return 0;
+}
+
+Input:
+Saveetha School of Engineering, Saveetha Institute
+
+Output:
+Frequency of 'Saveetha' = 2
