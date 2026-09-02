@@ -1,0 +1,45 @@
+//SANTHOSH-192521035
+//LEX – Remove Comments and Count Them
+#include <stdio.h>
+int comments = 0;
+FILE *out;
+%}
+%%
+"//".*                    { comments++; }
+"/*"([^*]|\*+[^*/])*\*+"/" { comments++; }
+\n                        { fputc('\n', out); }
+.                         { fputc(yytext[0], out); }
+%%
+int main()
+{
+    out = fopen("output.c", "w");
+    if (out == NULL)
+    {
+        printf("Cannot create output file\n");
+        return 1;
+    }
+    yylex();
+    fclose(out);
+    printf("Number of comments = %d\n", comments);
+    return 0;
+}
+int yywrap()
+{
+    return 1;
+}
+
+Input — input.c
+#include<stdio.h>
+
+int main()
+{
+    int a,b,c; /*variable declaration*/
+    printf("enter two numbers");
+    scanf("%d %d",&a,&b);
+    c=a+b;//adding two numbers
+    printf("sum is %d",c);
+    return 0;
+}	
+
+Output:
+Number of comments = 2
