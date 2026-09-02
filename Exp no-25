@@ -1,0 +1,28 @@
+//SANTHOSH-192521035
+//LEX Program – Identify Capital Words
+#include <stdio.h>
+%}
+%%
+[A-Z]+      { printf("Capital Word: %s\n", yytext); }
+.|\n        ;
+%%
+int main()
+{
+    yylex();
+    return 0;
+}
+int yywrap()
+{
+    return 1;
+}
+sample.txt
+HELLO world
+COMPILER Design
+LEX PROGRAM
+
+Output:
+Capital Word: HELLO
+Capital Word: COMPILER
+Capital Word: D
+Capital Word: LEX
+Capital Word: PROGRAM
