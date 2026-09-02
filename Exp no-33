@@ -1,0 +1,21 @@
+//SANTHOSH G-192521035
+//LEX Program to Validate URL 
+%{
+#include <stdio.h>
+%}
+%%
+(http|https):\/\/[a-zA-Z0-9.\/-]+ { printf("Valid URL\n"); }
+.|\n                              { printf("Invalid URL\n"); }
+%%
+int yywrap() { return 1; }
+int main() {
+    yylex();
+    return 0;
+}
+/
+
+Input:
+https://www.google.com
+
+Output:
+Valid URL
