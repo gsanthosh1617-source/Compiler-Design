@@ -1,0 +1,22 @@
+//SANTHOSH G-192521035
+//LEX Program to Find Length of Longest Word 
+%{
+#include <stdio.h>
+int max_len = 0;
+%}
+%%
+[a-zA-Z]+ { if (yyleng > max_len) max_len = yyleng; }
+.|\n      ;
+%%
+int yywrap() { return 1; }
+int main() {
+    yylex();
+    printf("Length of Longest Word = %d\n", max_len);
+    return 0;
+}
+
+Input:
+Computational Intelligence Laboratory
+
+Output:
+Length of Longest Word = 13
