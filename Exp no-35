@@ -1,0 +1,20 @@
+//SANTHOSH G-192521035
+//LEX Program to Check Whether Input is Digit or Not 
+%{
+#include <stdio.h>
+%}
+%%
+^[0-9]+$ { printf("Given input is a Digit/Number\n"); }
+.*       { printf("Given input is NOT a Digit\n"); }
+%%
+int yywrap() { return 1; }
+int main() {
+    yylex();
+    return 0;
+}
+
+Input:
+4589
+
+Output:
+Given input is a Digit/Number
